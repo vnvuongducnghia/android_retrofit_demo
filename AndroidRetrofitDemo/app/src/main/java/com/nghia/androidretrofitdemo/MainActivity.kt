@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi::class.java)
+        val jsonPlaceHolderApi = retrofit.create(ApiService::class.java)
         val request = jsonPlaceHolderApi.getPostList()
         // Run request
         request.enqueue(object : Callback<List<Post>> {
